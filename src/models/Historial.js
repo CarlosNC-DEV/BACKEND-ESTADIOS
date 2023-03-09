@@ -1,12 +1,22 @@
 import { Schema, model } from 'mongoose';
+const ObjectId = Schema.ObjectId;
 
 const historialSchema = new Schema(
     {
+        idEstadio:{
+            type: ObjectId
+        },
         estadio: {
             type: String
         },
+        idEquipo1:{
+            type: ObjectId
+        },
         equipo1: {
             type: String
+        },
+        idEquipo2:{
+            type: ObjectId
         },
         equipo2:{
             type: String
@@ -21,7 +31,7 @@ const historialSchema = new Schema(
         }
     },
     {
-        date: true,
+        timestamps: true,
         versionKey: false
     }
 );
