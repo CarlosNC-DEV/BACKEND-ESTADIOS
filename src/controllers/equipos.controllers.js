@@ -38,8 +38,8 @@ export const actualizarEquipos = async (req, res) => {
       return res.status(400).json("Todos los campos son requeridos");
     }
 
-    const equipoActualizado = await Equipos.findByIdAndUpdate(id, req.body);
-    res.status(200).json(equipoActualizado);
+    await Equipos.findByIdAndUpdate(id, req.body);
+    res.status(200).json("Equipo Actualizado Correctamente");
 
   } catch (error) {
     console.log(error);
